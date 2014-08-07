@@ -1,5 +1,5 @@
 from xlutils.copy import copy
-import xlwt
+#import xlwt
 import xlrd
 import sys
 import os
@@ -37,11 +37,13 @@ def writeLogFile(locationOfSheetToBeCopied, locationOfLogFile):
     while rowPosition < numberOfRows:
         rowPosition += 1
         writeSheet.get_sheet(8).write(rowPosition,0,"")
+    
+    logFile.close()
         
     writeSheet.save("temp.xls")
     
 """inserts an entry automatically into the EIF status sheet"""
-def insertEntry(locationOfSheetToBeCopied, locationOfWriteBack):
+def insertEntry(locationOfSheetToBeCopied, locationOfWriteBack, locationOfLogFile, name, buildName):
     
     readSheet = xlrd.open_workbook(locationOfSheetToBeCopied, sys.stdout, 0, True, "", "None", "None",True)
 
@@ -52,7 +54,7 @@ def insertEntry(locationOfSheetToBeCopied, locationOfWriteBack):
     numberOfColumns = eifStatus.ncols
 
     #this is the row that needs to be inserted
-    contentsOfCells = {4: [str(datetime.date.today()),"Test","Test","Test","Test"]}
+    contentsOfCells = {4: generateEntry(locationOfLogFile, name, buildName)}
     
     rowPosition = 4
     colPosition = 0
@@ -81,18 +83,29 @@ def insertEntry(locationOfSheetToBeCopied, locationOfWriteBack):
     writeSheet.save(locationOfWriteBack)
     readSheet.release_resources()
 
+"""takes the name of a log file and parses it for info, returns a list representing the entry"""
+def generateEntry(locationOfLogFile, name, buildName):
+    logFile = open(locationOfLogFile, "r")
+    
+    logFile.close()
+    
+    return [str(datetime.date.today()),"Test","Test",name, buildName]
+    
+    
+
 def main(args):
-    if len(args) >= 3:
+    if len(args) == 5:
         writeLogFile(args[0], args[1])
         print "\nLOG FILE HAS BEEN COPIED TO THE EXCEL WORKBOOK SUCCESSFULLY!"
-        insertEntry("temp.xls",args[2])
+        insertEntry("temp.xls",args[2], args[1], args[3], args[4])
         print "\nENTRY INSERTED SUCCESSFULLY!"
+        #clean up temp file
+        os.remove("temp.xls")
     else:
-        print "Not enough args, 3 are needed at minimum. Printing args..."
+        print "Not the right number of args, 5 are needed for this version."
+        print "See the *.bat file for an example Printing args..."
         for string in args:
             print string
 
 if __name__ == '__main__':
     main(sys.argv[1:])
-    #clean up temp files
-    os.remove("temp.xls")

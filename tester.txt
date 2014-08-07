@@ -32,3 +32,182 @@ IBM InfoSphere CDC Replication TestBed 5.9.20
          {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
 13:53:58 process #0 executing EIF_V111_valid_thresholds_012_SetToZeros ... 12.0%
 14:06:44 EIF_V111_valid_thresholds_012_SetToZeros ......... [0h 12m 40s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[2] #PASS[2] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [0h 25m 36s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+14:06:44 process #0 executing EIF_V111_test_malformed_workload_names ... 18.0%
+14:20:16 EIF_V111_test_malformed_workload_names ........... [0h 13m 27s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[3] #PASS[3] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [0h 39m 9s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+14:20:16 process #0 executing EIF_V111_test_threshold_error_messages ... 24.0%
+14:38:43 EIF_V111_test_threshold_error_messages ........... [0h 18m 22s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[4] #PASS[4] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [0h 57m 36s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+14:38:43 process #0 executing EIF_V111_test_threshold_messages_CECN0148W ... 29.0%
+14:54:03 EIF_V111_test_threshold_messages_CECN0148W ....... [0h 15m 14s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[5] #PASS[5] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [1h 12m 56s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+14:54:03 process #0 executing EIF_V111_workload_names_changes ... 35.0%
+15:07:30 EIF_V111_workload_names_changes .................. [0h 13m 21s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[6] #PASS[6] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [1h 26m 22s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+15:07:30 process #0 executing EIF_V111_basic_expectedGoodMsg ... 41.0%
+15:15:40 EIF_V111_basic_expectedGoodMsg ..................... [0h 8m 5s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[7] #PASS[7] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [1h 34m 33s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+15:15:40 process #0 executing EIF_V111_test_threshold_messages_CECN0149W ... 47.0%
+15:31:01 EIF_V111_test_threshold_messages_CECN0149W ....... [0h 15m 15s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[8] #PASS[8] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [1h 49m 54s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+15:31:01 process #0 executing EIF_V111_test_threshold_messages_CECN0151W ... 53.0%
+15:45:55 EIF_V111_test_threshold_messages_CECN0151W ....... [0h 14m 48s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[9] #PASS[9] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [2h 4m 47s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+15:45:55 process #0 executing EIF_V111_test_threshold_messages_CECN0147W ... 59.0%
+16:00:51 EIF_V111_test_threshold_messages_CECN0147W ....... [0h 14m 51s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[10] #PASS[10] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [2h 19m 44s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+16:00:51 process #0 executing EIF_V111_thresholds_set_all_zero ... 65.0%
+16:13:46 EIF_V111_thresholds_set_all_zero ................. [0h 12m 50s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[11] #PASS[11] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [2h 32m 39s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+16:13:46 process #0 executing EIF_V111_valid_thresholds_0_display ... 71.0%
+16:26:32 EIF_V111_valid_thresholds_0_display .............. [0h 12m 40s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[12] #PASS[12] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [2h 45m 25s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+16:26:32 process #0 executing EIF_V111_test_threshold_messages_CECN0150W ... 76.0%
+16:41:26 EIF_V111_test_threshold_messages_CECN0150W ....... [0h 14m 48s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[13] #PASS[13] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [3h 0m 18s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+16:41:26 process #0 executing EIF_V111_valid_thresholds_1_display ... 82.0%
+16:54:07 EIF_V111_valid_thresholds_1_display .............. [0h 12m 35s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[14] #PASS[14] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [3h 12m 59s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+16:54:07 process #0 executing EIF_V111_test_threshold_min_max ... 88.0%
+17:06:23 EIF_V111_test_threshold_min_max .................. [0h 12m 11s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[15] #PASS[15] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [3h 25m 16s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+17:06:23 process #0 executing EIF_V111_basic_targetErrorMsgs ... 94.0%
+17:13:06 EIF_V111_basic_targetErrorMsgs .................... [0h 6m 38s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[16] #PASS[16] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [3h 31m 59s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+17:13:06 process #0 executing EIF_V111_thresholds_MaxGreaterDiscreste_ResetGreaterMaxtime ... 100.0%
+17:25:59 EIF_V111_thresholds_MaxGreaterDiscreste_ResetGreaterMaxtime  [0h 12m 47s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[17] #PASS[17] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [3h 44m 52s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+17:25:59 Process #0 shutting down
+17:25:59 Completed execution @ 2014-06-25 17:25:59.851, escaped 3h 44m 52s
+17:25:59 Reporting results...
+
+** Test Summary Report **
+
+* SUMMARY *
+--------------------------------------------------------------------------------
+Test name: kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528
+Test Result: 17 test case(s) executed, 17 test case(s) executed without an error, 0 test case(s) failed, 100.0% pass rate
+Description: kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528
+Start time: 2014-06-25 13:41:07.309
+End time: 2014-06-25 17:25:59.851
+Execution time: 3h 44m 52s
+
+* TEST ENVIRONMENT *
+--------------------------------------------------------------------------------
+Source Product: CLASSIC.IMS V11R3M0
+Source Host: 9.30.136.78
+Source Database: DBMUSTR6 
+Product Info: CLASSIC.IMS V11R3M0
+
+Target Product: CLASSIC.IMS V11R3M0
+Target Host: 9.30.136.78
+Target Database: DBMUSTR6 
+Product Info: CLASSIC.IMS V11R3M0
+
+TestBed build: 5.9.20 (2014-06-10 17:08:00)
+Java version: 1.6.0
+
+#Candidates: 17  #Applicables: 17
+
+* RESULTS *
+--------------------------------------------------------------------------------
+
+#Total: 17
+#ERROR: 0
+#Valid (non error): 17
+
+#PASS : 17
+#FAIL : 0
+#KFAIL: 0
+#KPASS: 0
+
+%PASS : 100.0% #PASS / #Valid
+%FAIL : 0.0% #FAIL / #Valid
+%KFAIL: 0.0% #KFAIL / #Valid
+%KPASS: 0.0% #KPASS / #Valid
+
+%ERROR: 0.0% #ERROR / #Total
+
+%Total Pass: 100.0% (#PASS + #KPASS + #KFAIL) / #Valid
+%Total Fail: 0.0% #FAIL / #Valid
+
+%Expected  : 100.0% (#PASS + #KFAIL) / #Valid
+%Unexpected: 0.0% (#FAIL + #KPASS) / #Valid
+
+* RESULT DETAILS *
+--------------------------------------------------------------------------------
+PASS test cases (17):
+EIF_V111_thresholds_MaxLessDiscreste_ResetLessMaxtime
+EIF_V111_valid_thresholds_012_SetToZeros
+EIF_V111_test_malformed_workload_names
+EIF_V111_test_threshold_error_messages
+EIF_V111_test_threshold_messages_CECN0148W
+EIF_V111_workload_names_changes
+EIF_V111_basic_expectedGoodMsg
+EIF_V111_test_threshold_messages_CECN0149W
+EIF_V111_test_threshold_messages_CECN0151W
+EIF_V111_test_threshold_messages_CECN0147W
+EIF_V111_thresholds_set_all_zero
+EIF_V111_valid_thresholds_0_display
+EIF_V111_test_threshold_messages_CECN0150W
+EIF_V111_valid_thresholds_1_display
+EIF_V111_test_threshold_min_max
+EIF_V111_basic_targetErrorMsgs
+EIF_V111_thresholds_MaxGreaterDiscreste_ResetGreaterMaxtime
+
+
+** End of Test Summary Report **
+
+17:25:59 Generating reporting data...
+17:25:59 Reporting data stored @ C:\Users\kenfitz\workspace\TestBed-Classic\reports\kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528
+17:26:08 Cleaning up test environment
+17:26:08 TestBed terminating normally
