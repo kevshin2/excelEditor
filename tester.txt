@@ -1,0 +1,34 @@
+L140624 06/25/2014 18/18/18
+
+IBM InfoSphere CDC Replication TestBed 5.9.20
+13:41:01 TestBed for Classic starting on sdsvm910076(jvm 1.6.0)
+13:41:01 Command line options:
+         (-nodes) nodes: [ims.capture, ims.apply]
+         (-env) environment file: C:\timothyfile\Environment_9A.xml
+         (-zosEnv) environment file: C:\timothyfile\zos-env-config_9A_verson3.xml
+         (-t) included test cases(17): [EIF_V111_basic_expectedGoodMsg,EIF_V111_basic_targetErrorMsgs,EIF_V111_test_threshold_error_messages,EIF_V111_test_threshold_messages_CECN0147W,EIF_V111_test_threshold_messages_CECN0148W,EIF_V111_test_threshold_messages_CECN0149W,EIF_V111_test_threshold_messages_CECN0150W,EIF_V111_test_threshold_messages_CECN0151W,EIF_V111_thresholds_MaxGreaterDiscreste_ResetGreaterMaxtime,EIF_V111_thresholds_MaxLessDiscreste_ResetLessMaxtime...]
+         (-debug) turn on debug
+         (-order not specified) execution in random order
+         (-prefix) user prefix: TC
+         (-process) the number of processes: 1
+         (-noload) do not upload result to ActiveReports
+         (-cleanup 1) always cleanup
+         (-export 1) export events to text file
+         (-email) email recipients: [kevshen@us.ibm.com,   Balishet@us.ibm.com,  gtavolin@us.ibm.com]
+         (-noagentcheck) do not check server connections 
+13:41:02 Setting up and validating test environment
+13:41:02 Test Run Name: kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528 [176_134057528]
+13:41:02 Setting up and validating Classic test environment
+13:41:02 9: connected to TestBed zOS Services Server on port: 6970
+13:41:07 9: connected to TestBed zOS Services Server on port: 6970
+13:41:07 Starting test execution @ 2014-06-25 13:41:07.309
+13:41:07 Loading 17 candidate test cases
+13:41:17 Process #0 starting
+13:41:17 process #0 executing EIF_V111_thresholds_MaxLessDiscreste_ResetLessMaxtime ... 6.0%
+13:53:58 EIF_V111_thresholds_MaxLessDiscreste_ResetLessMaxtime  [0h 12m 40s] [PASS]
+         Desc:[kenfitz_CLASSIC_IMS_9_CLASSIC_IMS_9_176_134057528]
+         #TOTAL[1] #PASS[1] #FAIL[0] #KFAIL[0] #KPASS[0] #ERROR[0] [0h 12m 51s]
+         {pass: 100.0% fail: 0.0% kfail: 0.0% kpass: 0.0%} {% error: 0.0%}
+         {total pass/fail: 100.0%/0.0%} {expected/unexpected: 100.0%/0.0%}
+13:53:58 process #0 executing EIF_V111_valid_thresholds_012_SetToZeros ... 12.0%
+14:06:44 EIF_V111_valid_thresholds_012_SetToZeros ......... [0h 12m 40s] [PASS]
