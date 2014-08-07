@@ -1,5 +1,4 @@
 from xlutils.copy import copy
-#import xlwt
 import xlrd
 import sys
 import os
@@ -45,6 +44,7 @@ def writeLogFile(locationOfSheetToBeCopied, locationOfLogFile):
 """inserts an entry automatically into the EIF status sheet"""
 def insertEntry(locationOfSheetToBeCopied, locationOfWriteBack, locationOfLogFile, name, buildName):
     
+    #open file while keeping cell data
     readSheet = xlrd.open_workbook(locationOfSheetToBeCopied, sys.stdout, 0, True, "", "None", "None",True)
 
     eifStatus = readSheet.sheet_by_index(3)
@@ -59,6 +59,7 @@ def insertEntry(locationOfSheetToBeCopied, locationOfWriteBack, locationOfLogFil
     rowPosition = 4
     colPosition = 0
 
+    #read in each line already in the spreadsheet
     while rowPosition < numberOfRows:
         contentsOfRow = []
         while colPosition < numberOfColumns:
@@ -73,6 +74,7 @@ def insertEntry(locationOfSheetToBeCopied, locationOfWriteBack, locationOfLogFil
 
     writeSheet = copy(readSheet)
 
+    #write back the cells with new row inserted
     for row in contentsOfCells:
         while colPosition < numberOfColumns:
             writeSheet.get_sheet(3).write(row,colPosition,contentsOfCells[row][colPosition]) 
@@ -85,6 +87,7 @@ def insertEntry(locationOfSheetToBeCopied, locationOfWriteBack, locationOfLogFil
 
 """takes the name of a log file and parses it for info, returns a list representing the entry"""
 def generateEntry(locationOfLogFile, name, buildName):
+    
     logFile = open(locationOfLogFile, "r")
     
     logFile.close()
