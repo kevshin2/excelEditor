@@ -93,9 +93,7 @@ def generateEntry(locationOfLogFile, name, buildName):
     
     logFile.close()
     
-    return [str(datetime.date.today()),"Test","Test",name, buildName]
-    
-    
+    return [str(datetime.date.today()),"Test","Test",name, buildName]  
 
 def main(args):
     if len(args) == 5:
