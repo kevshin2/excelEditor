@@ -134,7 +134,7 @@ def generateEntry(locationOfLogFile, name, buildName):
     #create the Total/Run/Pass entry
     trp = "%s/%s/%s" % (totalNum, numRan, passed)
     
-    return [str(datetime.date.today()), trp,observations, name, buildName]  
+    return [str(datetime.date.today()), trp, observations, name, buildName]  
 
 def main(args):
     if len(args) == 5:
@@ -144,7 +144,7 @@ def main(args):
         print "\nLOG FILE HAS BEEN COPIED TO THE EXCEL WORKBOOK SUCCESSFULLY!"
         #clean up temp file
         os.remove("temp.xls")
-        #delete source xls file
+        #clean up source xls file
         os.remove("source.xls")
     else:
         print "Not the right number of args, 5 are needed for this version."

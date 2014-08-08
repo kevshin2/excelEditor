@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from cookielib import LWPCookieJar # needed for form authentication
 
 from urllib import urlencode
@@ -9,12 +8,18 @@ import string # to find and replace content in strings
 
 import sys
 
-def downloader(USER_NAME, PASSWORD):
+def downloader(USER_NAME, PASSWORD, FILE_LOCATION):
     
     SERVER_NAME = 'w3-connections.ibm.com'
     
     print "Attempting to log in to (%s)..." % (SERVER_NAME)
-
+    
+    # if port numbers are needed for your server, fill in below, otherwise leave them as is. Example: HTTP_PORT = ':9080'.
+    
+    HTTP_PORT = ''
+    
+    HTTPS_PORT = ''
+    
     # Create authenticated server opener
     
     cookieProcessor = urllib2.HTTPCookieProcessor(LWPCookieJar())
@@ -29,7 +34,7 @@ def downloader(USER_NAME, PASSWORD):
     
     # in this test case we used the port numbers, depending on the server, you can ignore these
     
-    urlform = "https://" + SERVER_NAME + "/wikis/j_security_check"
+    urlform = "https://" + SERVER_NAME + HTTPS_PORT + "/wikis/j_security_check"
     
     request = urllib2.Request(urlform, encodedForm)
     
@@ -53,20 +58,17 @@ def downloader(USER_NAME, PASSWORD):
             print 'Failed to log in.'
     
             exit()
-    
-    excelFile = urllib2.Request("https://w3-connections.ibm.com/files/form/anonymous/api/library/749dd86c-c4d8-4aa6-b03e-0bb4f6bae761"
-                                +"/document/fdc2f92b-03c9-4f77-b83c-d8f96f3c491b/media/V11.3_CurrentTestBucketRegressionStatus.xls")
-    output = open('source.xls','wb')
-    output.write(opener.open(excelFile).read())
-    print "V11.3_CurrentTestBucketRegressionStatus.xls has been saved as source.xls successfully!"
-    output.close()
-    
+            
 def main(args):
-    if len(args) == 2:
-        downloader(args[0],args[1])
+    if len(args) == 4:
+        prompt = "Please check the excel document named \"%s\" in this folder: \"%s\"\n" % (args[3], args[0].replace("\uploader.py", ""))
+        prompt += "When you are satisfied hit enter and the document will be uploaded to the wiki."
+        raw_input(prompt)
+        downloader(args[1], args[2], args[3])
     else:
-        print "This program requires two arguments, an IBM intranet username followed by the password."
+        print "This program requires 3 arguments, an IBM intranet username followed by the password"
+        print "as well as the location of the file to be uploaded"
         print "The user must have wiki access!"
         
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    main(sys.argv)
