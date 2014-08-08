@@ -10,7 +10,10 @@ import string # to find and replace content in strings
 import sys
 
 def downloader(USER_NAME, PASSWORD):
+    
     SERVER_NAME = 'w3-connections.ibm.com'
+    
+    print "Attempting to log in to (%s)..." % (SERVER_NAME)
     
     # if port numbers are needed for your server, fill in below, otherwise leave them as is. Example: HTTP_PORT = ':9080'.
     
@@ -49,11 +52,11 @@ def downloader(USER_NAME, PASSWORD):
     
     if string.find(loggedIn, 'window.location.replace') == -1 and string.find(loggedIn, 'X-LConn-Login') == -1:
     
-            print 'Logged in'
+            print 'Logged in successfully!'
     
     else:
     
-            print 'Failed to log in'
+            print 'Failed to log in.'
     
             exit()
     
@@ -61,6 +64,7 @@ def downloader(USER_NAME, PASSWORD):
                                 +"/document/fdc2f92b-03c9-4f77-b83c-d8f96f3c491b/media/V11.3_CurrentTestBucketRegressionStatus.xls")
     output = open('source.xls','wb')
     output.write(opener.open(excelFile).read())
+    print "V11.3_CurrentTestBucketRegressionStatus.xls has been saved as source.xls successfully!"
     output.close()
     
 def main(args):
