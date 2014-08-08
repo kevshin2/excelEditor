@@ -8,6 +8,10 @@ import string # to find and replace content in strings
 
 import sys
 
+import mimetypes
+
+import mmap
+
 def downloader(USER_NAME, PASSWORD, FILE_LOCATION):
     
     SERVER_NAME = 'w3-connections.ibm.com'
@@ -58,6 +62,20 @@ def downloader(USER_NAME, PASSWORD, FILE_LOCATION):
             print 'Failed to log in.'
     
             exit()
+            
+    excelFile = open('tester.xls', 'r')
+    mmapped_file_as_string = mmap.mmap(excelFile.fileno(), 0, access=mmap.ACCESS_READ)
+    
+    request2 = urllib2.Request('https://w3-connections.ibm.com/files/basic/api/userlibrary/b8e5e0c0-a38e-1033-9149-ac5876bd6d0c/document/a0c2ab4d-b530-458c-a1f1-6ee6d8c3acfb/media',
+                               mmapped_file_as_string)
+    contenttype = mimetypes.guess_type('tester.xls')[0]
+    request2.add_header('Content-Type', contenttype)
+    request2.get_method = lambda: 'PUT'
+    opener.open(request2)
+
+    
+    
+    excelFile.close()
             
 def main(args):
     if len(args) == 4:

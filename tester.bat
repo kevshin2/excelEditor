@@ -12,7 +12,6 @@ set locationOfOutput = tester.xls
 set name = "QA Tester"
 set buildName = "Build Name Placeholder"
 
-
 excelEditor.py %locationOfSource % %locationOfLogFile % %locationOfOutput % %name % %buildName %
 
 echo.
