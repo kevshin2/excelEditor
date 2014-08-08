@@ -8,7 +8,7 @@ downloader.py %userID % %password %
 
 set locationOfSource = source.xls
 set locationOfLogFile = tester.txt
-set locationOfOutput = tester.xls
+set locationOfOutput = output.xls
 set name = "QA Tester"
 set buildName = "Build Name Placeholder"
 

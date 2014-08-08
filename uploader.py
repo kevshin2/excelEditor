@@ -18,12 +18,6 @@ def downloader(USER_NAME, PASSWORD, FILE_LOCATION):
     
     print "\nAttempting to log in to (%s)..." % (SERVER_NAME)
     
-    # if port numbers are needed for your server, fill in below, otherwise leave them as is. Example: HTTP_PORT = ':9080'.
-    
-    HTTP_PORT = ''
-    
-    HTTPS_PORT = ''
-    
     # Create authenticated server opener
     
     cookieProcessor = urllib2.HTTPCookieProcessor(LWPCookieJar())
@@ -38,7 +32,7 @@ def downloader(USER_NAME, PASSWORD, FILE_LOCATION):
     
     # in this test case we used the port numbers, depending on the server, you can ignore these
     
-    urlform = "https://" + SERVER_NAME + HTTPS_PORT + "/wikis/j_security_check"
+    urlform = "https://" + SERVER_NAME + "/wikis/j_security_check"
     
     request = urllib2.Request(urlform, encodedForm)
     
@@ -63,17 +57,21 @@ def downloader(USER_NAME, PASSWORD, FILE_LOCATION):
     
             exit()
             
-    excelFile = open('tester.xls', 'r')
+    excelFile = open(FILE_LOCATION, 'r')
+    
+    #convert raw file to string
     mmapped_file_as_string = mmap.mmap(excelFile.fileno(), 0, access=mmap.ACCESS_READ)
     
-    request2 = urllib2.Request('https://w3-connections.ibm.com/files/basic/api/userlibrary/b8e5e0c0-a38e-1033-9149-ac5876bd6d0c/document/a0c2ab4d-b530-458c-a1f1-6ee6d8c3acfb/media',
+    request2 = urllib2.Request('https://w3-connections.ibm.com/files/basic/api/userlibrary/'
+                               +'b8e5e0c0-a38e-1033-9149-ac5876bd6d0c/document/a0c2ab4d-b530-458c-a1f1-6ee6d8c3acfb/media',
                                mmapped_file_as_string)
-    contenttype = mimetypes.guess_type('tester.xls')[0]
+    
+    contenttype = mimetypes.guess_type(FILE_LOCATION)[0]
     request2.add_header('Content-Type', contenttype)
     request2.get_method = lambda: 'PUT'
     opener.open(request2)
 
-    
+    print "File appears to have been uploaded successfully!"
     
     excelFile.close()
             
