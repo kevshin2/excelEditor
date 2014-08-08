@@ -93,9 +93,20 @@ def generateEntry(locationOfLogFile, name, buildName):
     
     logFile = open(locationOfLogFile, "r")
     
+    observations = "All pass"
+    
+    search = logFile.read();
+    
+    if search.find("%PASS : 100.0% #PASS / #Valid") == -1:
+        selection = ""
+        while selection.lower() != 'y' and selection.lower() != "yes":
+            observations = raw_input("\nThe test case does not have a 100% pass rate, please type in your observations: ")
+            print "You entered: %s" % (observations)
+            selection = raw_input("\nAre you satisfied with your observations? (Y/N): ")
+            
     logFile.close()
     
-    return [str(datetime.date.today()),"Test","Test",name, buildName]  
+    return [str(datetime.date.today()),"Test",observations,name, buildName]  
 
 def main(args):
     if len(args) == 5:
