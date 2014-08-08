@@ -20,16 +20,26 @@ def convertDate(cell, datemode):
 
 """writes contents of argument 2 to the EIF TCS sheet of argument 1
     and writes it to a temp location"""
-def writeLogFile(locationOfSheetToBeCopied, locationOfLogFile):
-    writeSheet = xlrd.open_workbook(locationOfSheetToBeCopied, sys.stdout, 0, True, "", "None", "None",True)
+def writeLogFile(locationOfSheetToBeCopied, locationOfLogFile, locationOfWriteBack):
+    readSheet = xlrd.open_workbook(locationOfSheetToBeCopied, sys.stdout, 0, True, "", "None", "None",True)
 
-    numberOfRows = writeSheet.sheet_by_index(8).nrows
+    #grab build number and total/run/pass from entry that was inserted
+    buildNumber = readSheet.sheet_by_index(3).cell_value(4,4)
+    trp = readSheet.sheet_by_index(3).cell_value(4,1)
+    date = str(datetime.date.today())
+    
+    numberOfRows = readSheet.sheet_by_index(8).nrows
 
-    writeSheet = copy(writeSheet)
-
+    writeSheet = copy(readSheet)
+    
+    entry = "%s %s %s" % (buildNumber, date, trp)
+    
+    writeSheet.get_sheet(8).write(2, 0, entry)
+    
+    #begin copying log file
     logFile = open(locationOfLogFile, 'r')
     
-    rowPosition = 2
+    rowPosition = 4
 
     for line in logFile:
         writeSheet.get_sheet(8).write(rowPosition,0, line)
@@ -42,7 +52,9 @@ def writeLogFile(locationOfSheetToBeCopied, locationOfLogFile):
     
     logFile.close()
         
-    writeSheet.save("temp.xls")
+    writeSheet.save(locationOfWriteBack)
+    
+    readSheet.release_resources()
     
 """inserts an entry automatically into the EIF status sheet"""
 def insertEntry(locationOfSheetToBeCopied, locationOfWriteBack, locationOfLogFile, name, buildName):
@@ -95,6 +107,7 @@ def generateEntry(locationOfLogFile, name, buildName):
     
     observations = "All pass"
     
+    #checks for 100% pass condition, if false it will ask for user input
     search = logFile.read();
     
     if search.find("%PASS : 100.0% #PASS / #Valid") == -1:
@@ -103,17 +116,32 @@ def generateEntry(locationOfLogFile, name, buildName):
             observations = raw_input("\nThe test case does not have a 100% pass rate, please type in your observations: ")
             print "You entered: %s" % (observations)
             selection = raw_input("\nAre you satisfied with your observations? (Y/N): ")
-            
+    
+    #finds the total number of tests        
+    totalNum = search.partition("#Total: ")[2]
+    totalNum = totalNum.partition("#")[0]
+    
+    #finds the number that ran
+    numRan = search.partition("Test Result: ")[2]
+    numRan = numRan.partition(" ")[0]
+    
+    #finds the number passed
+    passed = search.partition("#Valid (non error): ")[2]
+    passed = passed.partition("\n")[0]
+    
     logFile.close()
     
-    return [str(datetime.date.today()),"Test",observations,name, buildName]  
+    #create the Total/Run/Pass entry
+    trp = "%s/%s/%s" % (totalNum, numRan, passed)
+    
+    return [str(datetime.date.today()), trp,observations, name, buildName]  
 
 def main(args):
     if len(args) == 5:
-        writeLogFile(args[0], args[1])
-        print "\nLOG FILE HAS BEEN COPIED TO THE EXCEL WORKBOOK SUCCESSFULLY!"
-        insertEntry("temp.xls",args[2], args[1], args[3], args[4])
+        insertEntry(args[0],"temp.xls", args[1], args[3], args[4])
         print "\nENTRY INSERTED SUCCESSFULLY!"
+        writeLogFile("temp.xls", args[1], args[2])
+        print "\nLOG FILE HAS BEEN COPIED TO THE EXCEL WORKBOOK SUCCESSFULLY!"
         #clean up temp file
         os.remove("temp.xls")
         #delete source xls file
