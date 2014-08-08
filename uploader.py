@@ -12,7 +12,7 @@ def downloader(USER_NAME, PASSWORD, FILE_LOCATION):
     
     SERVER_NAME = 'w3-connections.ibm.com'
     
-    print "Attempting to log in to (%s)..." % (SERVER_NAME)
+    print "\nAttempting to log in to (%s)..." % (SERVER_NAME)
     
     # if port numbers are needed for your server, fill in below, otherwise leave them as is. Example: HTTP_PORT = ':9080'.
     

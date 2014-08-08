@@ -1,5 +1,8 @@
+@echo off
 set userID = 
 set password = 
+
+echo.
 
 downloader.py %userID % %password %
 
@@ -11,5 +14,9 @@ set buildName = "Build Name Placeholder"
 
 
 excelEditor.py %locationOfSource % %locationOfLogFile % %locationOfOutput % %name % %buildName %
+
+echo.
+
+uploader.py %userID % %password % %locationOfOutput %
 
 Pause&Exit
