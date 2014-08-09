@@ -66,6 +66,7 @@ def downloader(USER_NAME, PASSWORD, FILE_LOCATION):
                                +'b8e5e0c0-a38e-1033-9149-ac5876bd6d0c/document/a0c2ab4d-b530-458c-a1f1-6ee6d8c3acfb/media',
                                mmapped_file_as_string)
     
+    #this is a hack I found online to make the downloader in python work as an uploader
     contenttype = mimetypes.guess_type(FILE_LOCATION)[0]
     request2.add_header('Content-Type', contenttype)
     request2.get_method = lambda: 'PUT'
