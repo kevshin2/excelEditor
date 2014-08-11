@@ -1,6 +1,6 @@
 Python 2.7 must be installed to run this script. It can be downloaded from https://www.python.org/downloads/
 
-The python packages xlwt, xlrd, and xlutils must also be installed
+The python packages xlwt, xlrd, and xlutils must also be installed, they can be downloaded from http://www.python-excel.org/
 
 To use this script follow these steps:
 
