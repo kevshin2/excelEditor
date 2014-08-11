@@ -12,7 +12,7 @@ import mimetypes
 
 import mmap
 
-def downloader(USER_NAME, PASSWORD, FILE_LOCATION):
+def uploader(USER_NAME, PASSWORD, FILE_LOCATION):
     
     SERVER_NAME = 'w3-connections.ibm.com'
     
@@ -23,7 +23,6 @@ def downloader(USER_NAME, PASSWORD, FILE_LOCATION):
     cookieProcessor = urllib2.HTTPCookieProcessor(LWPCookieJar())
     
     opener = urllib2.build_opener(cookieProcessor)
-    
     
     # encoded parameters sent in a POST method (over secure connection)
     
@@ -81,7 +80,7 @@ def main(args):
         prompt = "Please check the excel document named \"%s\" in this folder: \"%s\"\n" % (args[3], args[0].replace("\uploader.py", ""))
         prompt += "When you are satisfied hit enter and the document will be uploaded to the wiki."
         raw_input(prompt)
-        downloader(args[1], args[2], args[3])
+        uploader(args[1], args[2], args[3])
     else:
         print "This program requires 3 arguments, an IBM intranet username followed by the password"
         print "as well as the location of the file to be uploaded"
