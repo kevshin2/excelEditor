@@ -152,7 +152,7 @@ def main(args):
         os.remove("source.xls")
     else:
         print "Not the right number of args, 5 are needed for this version."
-        print "See the *.bat file for an example Printing args..."
+        print "See the excelAutomation.bat file for an example. Printing args..."
         for string in args:
             print string
 
