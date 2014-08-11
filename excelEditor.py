@@ -34,7 +34,9 @@ def writeLogFile(locationOfSheetToBeCopied, locationOfLogFile, locationOfWriteBa
     
     entry = "%s %s %s" % (buildNumber, date, trp)
     
-    writeSheet.get_sheet(8).write(2, 0, entry)
+    sheetToBeModified = writeSheet.get_sheet(8)
+    
+    sheetToBeModified.write(2, 0, entry)
     
     #begin copying log file
     logFile = open(locationOfLogFile, 'r')
@@ -42,13 +44,13 @@ def writeLogFile(locationOfSheetToBeCopied, locationOfLogFile, locationOfWriteBa
     rowPosition = 4
 
     for line in logFile:
-        writeSheet.get_sheet(8).write(rowPosition,0, line)
+        sheetToBeModified.write(rowPosition,0, line)
         rowPosition += 1
 
     #"delete" rows if logfile isnt longer than the previous logfile
     while rowPosition < numberOfRows:
         rowPosition += 1
-        writeSheet.get_sheet(8).write(rowPosition,0,"")
+        sheetToBeModified.write(rowPosition,0,"")
     
     logFile.close()
         
@@ -88,11 +90,13 @@ def insertEntry(locationOfSheetToBeCopied, locationOfWriteBack, locationOfLogFil
         colPosition = 0
 
     writeSheet = copy(readSheet)
+    
+    sheetToBeModified = writeSheet.get_sheet(3)
 
     #write back the cells with new row inserted
     for row in contentsOfCells:
         while colPosition < numberOfColumns:
-            writeSheet.get_sheet(3).write(row,colPosition,contentsOfCells[row][colPosition]) 
+            sheetToBeModified.write(row,colPosition,contentsOfCells[row][colPosition]) 
             colPosition += 1
             
         colPosition = 0
