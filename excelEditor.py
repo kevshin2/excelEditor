@@ -10,13 +10,13 @@ def convertDate(cell, datemode):
     if cell.ctype == xlrd.XL_CELL_DATE:
         datetuple = xlrd.xldate_as_tuple(cell.value, datemode)
         if datetuple[3:] == (0, 0, 0):
-            return datetime.date(datetuple[0], datetuple[1], datetuple[2])
-        return datetime.date(datetuple[0], datetuple[1], datetuple[2], datetuple[3], datetuple[4], datetuple[5])
+            return str(datetime.date(datetuple[0], datetuple[1], datetuple[2]))
+        return str(datetime.date(datetuple[0], datetuple[1], datetuple[2], datetuple[3], datetuple[4], datetuple[5]))
     if cell.ctype == xlrd.XL_CELL_EMPTY: 
         return None
     if cell.ctype == xlrd.XL_CELL_BOOLEAN: 
         return cell.value == 1
-    return cell.value
+    return str(cell.value)
 
 """writes contents of argument 2 to the EIF TCS sheet of argument 1
     and writes it to a temp location"""
@@ -83,7 +83,7 @@ def insertEntry(locationOfSheetToBeCopied, locationOfWriteBack, locationOfLogFil
             if colPosition is not 0:
                 contentsOfRow.append(eifStatus.cell_value(rowPosition, colPosition))
             else:
-                contentsOfRow.append(str(convertDate(eifStatus.cell(rowPosition,colPosition),0)))             
+                contentsOfRow.append(convertDate(eifStatus.cell(rowPosition,colPosition),0))             
             colPosition += 1
         rowPosition += 1
         contentsOfCells[rowPosition] = contentsOfRow
