@@ -126,12 +126,12 @@ def generateEntry(locationOfLogFile, name, buildName):
     totalNum = totalNum.partition("#")[0]
     
     #finds the number that ran
-    numRan = search.partition("Test Result: ")[2]
-    numRan = numRan.partition(" ")[0]
+    numRan = search.partition("#Valid (non error): ")[2]
+    numRan = numRan.partition("#")[0]
     
     #finds the number passed
-    passed = search.partition("#Valid (non error): ")[2]
-    passed = passed.partition("\n")[0]
+    passed = search.partition("#PASS : ")[2]
+    passed = passed.partition("#")[0]
     
     logFile.close()
     
